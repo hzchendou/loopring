@@ -1,0 +1,83 @@
+site_name: Loopring Documentation
+theme: material
+theme:
+    name: 'material'
+    palette:
+        primary: 'green'
+        accent: 'deep orange'
+    logo: 'img/logo.svg'
+    feature:
+        tabs: true
+extra_css:
+    - 'stylesheets/extra.css'
+strict: true
+markdown_extensions:
+    - admonition
+    - codehilite
+    - footnotes
+    - meta
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+extra:
+    social:
+        - type: 'github'
+          link: 'https://github.com/Loopring'
+        - type: 'twitter'
+          link: 'https://twitter.com/loopringorg'
+        - type: 'telegram'
+          link: 'https://t.me/loopringinternational'
+        - type: 'medium'
+          link: 'medium.com/loopring-protocol'
+        - type: 'slack'
+          link: 'https://loopring.rocket.chat/'      
+
+repo_url: https://github.com/Loopring/documents
+site_description: Loopring - Decentralized Token Exchange Protocol
+pages:
+    - Loopring: index.md
+    - English:
+        - Overview: English/overview.md
+        - LRC Token: English/token.md
+        - 'Protocol': English/projects/protocol.md
+        - 'Relays': English/projects/relay.md
+        - 'Wallets': English/projects/wallet.md
+        - 'Tokenization Services': English/projects/tokenization.md
+        - Contribution: English/contribution.md
+    - 日本語:
+        - 概要: Japanese/overview.md
+        - 契約: Japanese/projects/protocol.md
+    - 한국어:
+        - 개요: Korean/overview.md
+    # - Portuguese:
+    #     - Overview: Portuguese/overview.md
+    #     - LRC Token: Portuguese/token.md
+    #     - 'Protocol': Portuguese/projects/protocol.md
+    #     - 'Relays': Portuguese/projects/relay.md
+    #     - 'Ring Miners': Portuguese/projects/ringminer.md
+    #     - 'Wallets': Portuguese/projects/wallet.md
+    #     - 'Tokenization Services': Portuguese/projects/tokenization.md
+    #     - Contribution: Portuguese/contribution.md
+
+    # - 中文:
+    #     - 概览: Chinese/overview.md
+    #     - LRC代币: Chinese/token.md
+        # - 'Protocol': Chinese/projects/protocol.md
+        # - 'Relays': Chinese/projects/relay.md
+        # - 'Ring Miners': Chinese/projects/ringminer.md
+        # - 'Wallets': Chinese/projects/wallet.md
+        # - 'Tokenization Services': Chinese/projects/tokenization.md
+        # - 社区贡献: Chinese/contribution.md
