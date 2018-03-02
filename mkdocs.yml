@@ -1,4 +1,4 @@
-site_name: Loopring Documentation
+site_name: Loopring 文档说明
 theme: material
 theme:
     name: 'material'
@@ -43,25 +43,26 @@ extra:
         - type: 'medium'
           link: 'medium.com/loopring-protocol'
         - type: 'slack'
-          link: 'https://loopring.rocket.chat/'      
+          link: 'https://loopring.rocket.chat/'
 
-repo_url: https://github.com/Loopring/documents
+repo_url: https://github.com/hzchendou/loopring
 site_description: Loopring - Decentralized Token Exchange Protocol
 pages:
     - Loopring: index.md
-    - English:
-        - Overview: English/overview.md
-        - LRC Token: English/token.md
-        - 'Protocol': English/projects/protocol.md
-        - 'Relays': English/projects/relay.md
-        - 'Wallets': English/projects/wallet.md
-        - 'Tokenization Services': English/projects/tokenization.md
-        - Contribution: English/contribution.md
-    - 日本語:
-        - 概要: Japanese/overview.md
-        - 契約: Japanese/projects/protocol.md
-    - 한국어:
-        - 개요: Korean/overview.md
+    - 中文:
+        - 概览: Chinese/overview.md
+        - LRC代币: Chinese/token.md
+        - 'Protocol': Chinese/projects/protocol.md
+        - 'Relays': Chinese/projects/relay.md
+        - 'Ring Miners': Chinese/projects/ringminer.md
+        - 'Wallets': Chinese/projects/wallet.md
+        - 'Tokenization Services': Chinese/projects/tokenization.md
+        - 社区贡献: Chinese/contribution.md
+    # - 日本語:
+    #     - 概要: Japanese/overview.md
+    #     - 契約: Japanese/projects/protocol.md
+    # - 한국어:
+    #     - 개요: Korean/overview.md
     # - Portuguese:
     #     - Overview: Portuguese/overview.md
     #     - LRC Token: Portuguese/token.md

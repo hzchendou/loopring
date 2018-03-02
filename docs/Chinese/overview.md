@@ -1,78 +1,40 @@
-# What is Loopring
+# Loopring 是什么
+Loopring是一个去中心化的代币交换协议，在以太坊公链上，使用智能合约实现Loorping去中心化交易系统中的核心功能。与传统中心化交易所相比，Loopring带来了一系列提升，包括如下几个重要方面：
 
-Loopring is a decentralized token exchange protocol. It is implemented as an ethereum smart-contract at the core of the loopring decentralized exchange system. Its design allows for several improvements over traditional centralized exchanges:
+  - 降低交易风险：不需要将资产交由第三方管理，所有的操作都掌握在交易者手中，保障了数字资产安全。
+  - 高流动性：Loopring独创的环路撮合技术使得任何资产交易对都可以参与订单撮合，提供了资产间的流动性
+  - 公平性：手续费以及优惠机制能够保障各个参与方的利益均衡（这里的利益均衡并不是利益平分，而是各个参与方都可以制定符合自己利益的规则，在保障规则的前提下执行），这些参与方包括：订单创建者、订单购买者以及订单撮合矿工。
 
-* **Reduced Counterparty & Exchange Risk:** Removing the risk of depositing and storing digital assets on a third party exchange and tokens are never locked by orders.
-* **High liquidity:** Orders are ring-matched allowing for high liquidity on any trading pair.
-* **Fairness:** The fee & discount model allows for fairness between all parties involved (Makers, Takers and Miners).
-* **Weak Supervision:** The whole system is completely decentralised.
+如果你想了解更多关于Loopring协议研发背景、设计思想信息，建议参考Loopring官方[白皮书](http://hzchendou-loopring.oss-cn-hangzhou.aliyuncs.com/zh_whitepaper.pdf)，需要指出的是，官方团队在实际开发实现时，实现方式与当前白皮书描述的方式有出入，如果有不同之处，一切以官方网站信息为准。
 
-You can learn more about the background and general design of the loopring protocol in our [whitepaper](https://github.com/Loopring/whitepaper/raw/master/en_whitepaper.pdf).
-Bear in mind that as we proceed with the implementation, some details in the whitepaper might become outdated. Whenever there is a difference, please refer to this website as the latest official update.
+## 为什么需要开发Loopring协议
 
-## Why ?
-The loopring protocol was designed to address numerous issues found in centralized exchanges, for a brief explanation checkout the [last section](overview.md#issues-with-centralized-exchanges) of this page.
+Loopring协议用于解决一系列中心化交易所机制带来的不可避免的问题，这些问题在本文[最后小节](overview.md#中心化交易所弊端)中有相关阐述。
 
-# Ecosystem
+## Loopring生态系统
 
-This section introduces the key parts of the loopring ecosystem and how they interact with each other. They jointly provide all functionalities a centralized exchange has to offer. For a more in depth explanation of each one of them, follow the links below.
+本节将介绍Loopring生态中的重要组件，简要介绍它们的功能以及组件之间的联系。这些组件组合在一起完成了中心化交易所提供的功能，各个组件的详细内容将在接下来章节进行详细描述。
 
-**[Wallets](./projects/wallet.md)**
->A common wallet service/interface that gives you access to your tokens and provides you with a way to send orders to the loopring network.
+**[钱包：Wallets](./projects/wallet.md)**: 钱包提供了基础钱包服务，使得用户可以通过钱包管理代币，连接到Loopring网络，发送订单交易信息。
 
-**[Relays](./projects/relay.md)**
->Maintains public orderbooks and trade history. Broadcasts new orders to other relays and ring miners. Ring-mining is a feature of relays. It is computational heavy and is done completly off-chain. The process produces chains of trades involving at least 2 tokens, we call that an [order ring](./projects/protocol.md#order-ring).
+**[中继器：Relays](./projects/relay.md)**: 中继器维护公开订单账本信息以及交易历史信息，广播新订单，通知其他中继器以及环路撮合矿工。环路撮合矿工通常作为中继器的一个功能，环路撮合矿工承担了大量计算任务，这些计算任务是在链下完成的，这样可以节省链上交易成本，这个计算任务至少包含两种代币信息，完成的撮合订单称之为订单环（order ring）
 
-**[Loopring Protocol Smart Contracts](./projects/protocol.md)**
->A set of smart contracts that checks ring-matched orders received from the miners, do the token transfers on behalf of the users, incentivize the miners and emit events. The relays/order browsers listen to these events to keep their orderbooks and trade history up to date.
+**[Loopring智能合约：Loopring Protocol Smart Contracts](./projects/protocol.md)**:  Loopring 包含了一系列智能合约，对矿工提交的环路订单进行校验，校验合格的订单将按照用户提交的订单信息进行代币转账，同时合约包含了激励机制，可以激励撮合成功的矿工，触发事件。中继器、订单浏览器监听到相关事件后更新订单账本信息并将订单添加到交易历史信息。
 
-**[Asset Tokenization Services](./projects/tokenization.md)**
-> A bridge between assets that cannot be directly traded on loopring. They are centralized services ran by trustworthy companies or organisations. A user could deposit his assets (fiat or tokens from other chains) and get tokens issued. By returning the tokens the user get backs his deposit. LRC is not a cross-chain exchange protocol, but with Asset Tokenization Services, it is possible to trade Ethereum ERC20 tokens with physicial assets as well as assets on other blockchains.
+**[资产代币化服务：Asset Tokenization Services](./projects/tokenization.md)**: 资产代币化服务为为不可直接在Loopring上交易的资产提供了转换桥梁，这是一种中心化服务，由可信任的第三方公司或组织提供。用户通过资产代币服务商抵押自己的资产，得到发行的代币。Loopring不具备跨链交易能力，但是通过资产代币化服务，让Loopring可以与现实资产以及其它的链上资产进行交易。
 
-> Asset Tokenization Services is not part of Loopring project though.
+资产代币化服务并不包含在当前的Loopring项目规划内，资产代币化服务的出现将进一步完善Loopring生态
 
-## Overview
-This is the lifecycle of a successful order on the loopring network with an explanation of each step bellow.
+## 预览
+
+下图描述了一个正常的订单在Loopring网络中的生命周期信息，包含了一系列步骤。
+
 ![](/img/diagrams/loopring-overview.png)
 
-**0 - The user wants to make a trade**
->The user wants to exchange `X` amount of `TokenA` for `Y` amount of `TokenB`. The current rate and orderbook for this pair can be found on multiple sources provided by the relays or any other interface hooked up on the network (e.g. orderbook browsers). Once he is ready, he uses his wallet interface to enter the details of his order and submits it. An amount of LRC can be added to the order as a fee for miners. Orders with a higher LRC fee have a better chance to be processed earlier by miners.
 
-**1 - ERC20 Authorization**
->The wallet authorizes the loopring smart contracts to handle `X` amount of the `TokenA` the user wants to sell. This does not lock the user's tokens. He is free to move them while the order is being processed by the network. If the sender's balance is being checked at some point (by a miner or the loopring ) and the funds are insufficient, it will be considered scaled-down. A order being scaled-down is not the same as being cancelled, a scaled-down order will be automatically scaled up to its original size if funds sufficient are deposited to its address, while cancellation is a one way manual operation and cannot be revert.
+**用户发起一笔交易**: 用户先要用`Y`个数量的`TokenB`换取`X`个数量的`TokenA`，当前Loopring网络中存在多个未成交订单满足用户交易条件（例如：订单浏览器）。一旦用户准备交易，填写完整的订单信息，利用钱包接口提交这笔订单，发起交易。一定数量的LRC（Loopring生态中的一种ERC20代币，由loopring官方发布）可以作为矿工手续费添加到订单信息中，当然手续费用越高，矿工将优先处理。
 
-**2 - Sending the order to the network**
->Once the authorization is made, the order's data is signed with the private key of the sender. Then, the wallet sends the order along with its signature to one or more nodes in the network (relay).
-
-**3 - Broadcast**
->On the reception of the order, relays update their public orderbook and broadcast the order to other relays as well as ring miners to start the order processing as quickly as possible.
-
-**4 - Ring Miners (order matching)**
->Ring Miners receive the order and add it to their orderbook. Each one of them tries to fill it fully or partially at the given exchange rate or better by ring-matching it with multiple other orders. The ring-matching is the main reason why the protocol is able to provide high liquidity over any pair.
-If the rate is better than the rate the user asked for, the savings are shared amongst all the orders in the ring and is called the Margin Split. For his fee the miner can choose between claiming the Margin Split and give back the LRC to the user or just keep the LRC fee.
-
-**5 - Validation & Settlement**
->The ring is received by the loopring protocol contract. It makes multiple checks to verify the miner's supplied datas and determine if the ring can be settled fully or partially (depending on the fill rate of the orders in the ring and the tokens in the users wallets). If all checks are successful, the contract makes the token tranfers to the users (5a) and pays the miner's fees (5b) at the same time. This operation is atomic.
-
-Some details were ommited to ease the understanding of what is happening when an order enters the loopring network. To deepen your understanding of the protocol (order cancelling, ring-matching, orderbooks and trade history synching, etc...) we advise you to take a look at the documentation of the key parts of the ecosystem [listed above](overview.md#ecosystem).
+**ERC20代币交易授权**:  
 
 
-# Issues with centralized exchanges
-To better understand the need of a system such as loopring, we first need to point the issues in the centralized exchanges model.
-
-Here is a very simplified view of what happens when you send your tokens to a centralized exchange.
-
-![](/img/diagrams/centralized-model.png)
-
-In order to use the exchange and trade your tokens, you first have to deposit your tokens in the exchange. Your tokens are sent to the exchange's wallets and it gives you back an IOU (I owe you), which is a proof of debt. Then you trade your IOU with other users IOUs. Finally when you want to withdraw, you give back your IOU to the exchange which then sends you back your tokens to your external wallet address.
-
-**Lack of Security**
-> In this model, you don't have control over your tokens. It allows for instant transactions on the exchange but it comes with a lot of risks. There are multiple scenarios where you could loose your money (frozen account, exchange shutting down, hacking, developer's mistakes, etc...).
-
-**Lack of Transparency**
-> Anything can happen to your tokens when they are on the exchange's wallets. You have no way of knowing what exactly. It is always too late when an exchange goes bankrupt and users never see it coming.
-
-**Lack of Liquidity**
-> You are only able to trade with the exchange own order pools and supported token pairs. If there is not enough volume you can try on an other exchange and if the token pair you want to trade is not supported, you could try making indirect trades with other pairs to get what you want or, again, transfer your funds to an other exchange. Either way you get hit multiple times by fees and you loose money.
-
-There are other challenges faced by centralized exchanges. We won't discuss them all here and we advise you to read the many articles written on the subject across the web.
+# 中心化交易所弊端

@@ -1,0 +1,3 @@
+Loopring is the project for decentralized ERC20 token exchange. The first public blockchain Loopring supports will be Ethereum, but other blockchains with smart contract capability can also be supported in a similar way, such as NEO, Qtum, and EOS. To have an overview of Loopring, please visit our website - [https://loopring.org](https://loopring.org).
+
+Loopring is not a decentralized exchange per se, as all building blocks of a traditional exchange are dissembled and put together again as different roles in a decentralized environment. These roles include, but may not be limited to, wallets, relays, orderbook browsers, ring-miners, and asset tokenization services. 
