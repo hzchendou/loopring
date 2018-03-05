@@ -1,3 +1,3 @@
-# Wallets
+# 钱包
 
-In construction.
+即将更新

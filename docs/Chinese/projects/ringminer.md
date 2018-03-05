@@ -1,3 +1,3 @@
-# Ring Miners
+# 环路撮合矿工
 
-In construction.
+即将更新

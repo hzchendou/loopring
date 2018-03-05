@@ -1,23 +1,21 @@
-# Contribution
+# 社区贡献
 
-## How to contribute
+## 如何贡献
 
-We use [Slack](slack.com) to communicate with each other. Feel free join in our slack channels:
+社区使用 [Slack](slack.com) 与社区成员联系. 如果你对此感兴趣，欢迎加入以下社区频道:
 
 - [Loopring Announcement (read-only)](https://loopring-team.slack.com/messages/C60UCUECV)
 - [Loopring Community (English)](https://loopring-team.slack.com/messages/C6NTLGX3P)
 - [Loopring Contributors](https://loopring-team.slack.com/messages/G77R2BQUV)
 
-You may want to talk to Daniel Wang ([daniel@loopring.org](mailto:daniel@loopring.org)), Loopring CEO and major developer, about your idea and the way you can help. This is not a prerequisite, however, you can create pull requests at anytime.
+你可以随时来联系Daniel Wang ([daniel@loopring.org](mailto:daniel@loopring.org)), 他是 Loopring CEO 以及主要开发人员, 你可以向他阐述你的疑问，以及贡献任何可以帮助Loopring社区成长的内容. 当然你可以在GitHub仓库中发起Pull Request来贡献你的力量.
 
-## Our Git Branching Model
+## 我们项目使用开发分支模式
 
-For git repositories that have releases (this one not included), we will adopt ["A Successful Git Branching Model"](http://nvie.com/posts/a-successful-git-branching-model/) starting from Nov. 1st, 2017.
+Git仓库使用的是 ["A Successful Git Branching Model"](http://nvie.com/posts/a-successful-git-branching-model/).
 
 ![](img/git-branching-model.png)
 
-## Contributors
+## 贡献人员
 
-If your pull requests are ever accepted and merged, please create a pull request to put yoruself in this list.
-
-- Fei YUAN -  Reviewed LRC token smart-contract and created an important pull request.
+如果你参与Loopring社区建设，那么你可以在GitHub仓库中填写你的贡献信息。
